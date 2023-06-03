@@ -8,9 +8,9 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./upload-list.component.css']
 })
 export class UploadListComponent implements OnInit {
-  fileUploads?: any[];
+  fileUploads?: any[]=[{file: File, url: 'https://firebasestorage.googleapis.com/v0/b/imageu…=media&token=9cebdde9-a6bd-4c54-a659-be4bf5d17ca6', name: 'thisisengineering-raeng-TXxiFuQLBKQ-unsplash.jpg'}];
 
-  constructor(private uploadService: FileUploadService) { }
+  constructor(private uploadService: FileUploadService,) { }
 
   ngOnInit(): void {
     this.uploadService.getFiles(6).snapshotChanges().pipe(
